@@ -6,7 +6,7 @@ header {
 }
 
 .logo {
-  background: url('image.jpg') no-repeat;
+  background: url('./image.jpg') no-repeat;
   background-size: 100%;
   float:left;
   width:200%;
