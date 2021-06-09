@@ -21,8 +21,8 @@ function myFunction() {
     // alert(t['jobtitel'])
     var form =   {"first_name":document.getElementById("fname").value,
                      "last_name":document.getElementById("lname").value};
-  
+
     console.log(form.first_name);
     console.log(JSON.stringify(form));
     console.log(data.name)
-  }
+}
