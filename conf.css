@@ -9,7 +9,7 @@ header {
   background: url('https://github.com/micha-bitton-walkme/wedding/blob/main/image.jpg') no-repeat;
   background-size: 100%;
   float:left;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   font-family: Baskerville;
   color: #575557;
@@ -86,8 +86,7 @@ label { float:right; }
   border: 5;
   display: inline-block;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
