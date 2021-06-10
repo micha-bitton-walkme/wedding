@@ -9,11 +9,13 @@ header {
   background: url('https://github.com/micha-bitton-walkme/wedding/blob/main/image.jpg') no-repeat;
   background-size: 100%;
   float:left;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   font-family: Baskerville;
   color: #575557;
   position: center;
+  background-attachment: fixed;
+  background-position: right;
 }
 
 .laura {
