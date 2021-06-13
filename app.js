@@ -1,28 +1,29 @@
-function myFunction() {
-    var jsonfile = JSON.parse('./seats.json');
-    var fname = 'יוסי חכמון';
-    // var fname = document.getElementById('fname').value;
-    var lname = document.getElementById('lname').value;
-    var t = JSON.parse('{"name": "Micha", "table": "4"}');
-    var uniqname = t['name']
-    var table = t['table']
-    for (var key, value in jsonfile) {
-        if (json.hasOwnProperty(key)) {
-            if (fname + lname.test(key)) {
-                console.log('match!', jsonfile[key]); // do stuff here!
-            }
-            if ( value == fname ) {
-            swal("Table "  + value + "!", key + " thank you for coming, enjoy :)", "success");
-            }
-        }
-    }
-    console.log(table)
-    swal("Table "  + table + "!", fname + " thank you for coming, enjoy :)", "success");
-    // alert(t['jobtitel'])
-    var form =   {"first_name":document.getElementById("fname").value,
-                     "last_name":document.getElementById("lname").value};
+const seats = {}
+fetch('./seats.txt')
+.then(res => res.text())
+.then(text => text.replace(/(.+)\t(.+)/g, (_, name, table) => seats[name.trim()] = table.trim() ) && console.log('seats loaded', { seats }))
+.then(() => { 
+    find();
+    document.getElementById('name').focus();
+});
 
-    console.log(form.first_name);
-    console.log(JSON.stringify(form));
-    console.log(data.name)
+function find() {
+    const value = document.getElementById('name').value;
+
+    let html = "";
+    if (value) {
+        const matches = Object.keys(seats)
+            .filter(name => name.includes(value))
+            .sort();
+
+        html = matches.length 
+            ? '<p>' + matches.slice(0, 3).map(name => `${name.replace(value, `<b>${value}</b>`)} - שולחן  ${seats[name]}`).join('</p><hr /><p>') + '</p>'
+            : '<p><b>אין תוצאות</b></p><hr /><p>אנא בדוק שאין טעות בשם.<br> יש להקליד בעברית</p>';
+
+        if (matches.length > 3) html += `<p><small> ועוד ${matches.length - 3} התאמות</small></p>`;
+    } else {
+        html = '<p>הזן שם והלחץ על "חפש"</p>"';
+    }
+
+    document.getElementById('out').innerHTML = html;
 }
