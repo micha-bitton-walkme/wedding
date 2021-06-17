@@ -35,6 +35,7 @@ body {
 }
 
 #out p {
+  position: fixed;
   font-size: 150%;
   display: inline-block;
 }
