@@ -22,7 +22,7 @@ function find() {
 
         if (matches.length > 3) html += `<p><small> ועוד ${matches.length - 3} התאמות</small></p>`;
     } else {
-        html = '<p>הזן שם והלחץ על "חפש"</p>"';
+        html = '<p>הזן שם ולחץ על "חפש"</p>';
     }
 
     document.getElementById('out').innerHTML = html;
