@@ -9,7 +9,7 @@ fetch('./seats.txt')
 
 function find() {
     const value = document.getElementById('name').value;
-    const footer = "שים לב במידה והשולחן מלא, תרגיש חופשי לשבת במקומות הלא מסומנים, תודה שבאת&#128591";
+    const footer = "שים לב: במידה והשולחן מלא, תרגיש חופשי לשבת במקומות הלא מסומנים, תודה שבאת&#128591";
     let html = "";
     if (value) {
         const matches = Object.keys(seats)
