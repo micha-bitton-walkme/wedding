@@ -20,7 +20,7 @@ function find() {
             ? '<p>' + matches.slice(0, 3).map(name => `${name.replace(value, `<b>${value}</b>`)} - שולחן  ${seats[name]}`).join('</p><hr /><p>') + '</p>'
             : '<p><b>אין תוצאות</b></p><hr /><p>אנא בדוק שאין טעות בשם.<br> יש להקליד בעברית<br> במידה ולא נמצא לך שולחן, תרגיש חופשי לשבת במקומות הלא מסומנים, תודה שהגעת&#128519 </p>';
 
-        if (matches.length > 3) html += `<p><small> ועוד ${matches.length - 3} התאמות</small></p>`;
+        if (matches.length > 3) html += `<br><p><small> ועוד ${matches.length - 3} התאמות</small></p></br>`;
         if (matches.length >= 1) html += `<hr /></p><b>${footer}</b></p>`;
     } else {
         html = '<p>הזן שם ולחץ על "חפש"</p>';
